@@ -45,13 +45,13 @@ fi
  
 TOP="${ANDROID_BUILD_TOP}"
 MERGEDREPOS="${TOP}/merged_repos.txt"
-MANIFEST="${TOP}/.repo/manifests/snippets/komodo.xml"
+MANIFEST="${TOP}/.repo/manifests/snippets/gonzaga.xml"
 BRANCH=$(git -C ${TOP}/.repo/manifests.git config --get branch.default.merge | sed 's#refs/heads/##g')
 STAGINGBRANCH="staging/${BRANCH}_${OPERATION}-${NEWTAG}"
 BLACKLIST=$(cat "${TOP}/scripts/blacklist")
  
-# Build list of Komodo OS forked repos
-PROJECTPATHS=$(grep "remote=\"komodo" "${MANIFEST}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')
+# Build list of Gonzaga OS forked repos
+PROJECTPATHS=$(grep "remote=\"gonzaga" "${MANIFEST}" | sed -n 's/.*path="\([^"]\+\)".*/\1/p')
  
 echo "#### Old tag = ${OLDTAG} Branch = ${BRANCH} Staging branch = ${STAGINGBRANCH} ####"
  
